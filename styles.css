@@ -1,0 +1,214 @@
+/* Genel Ayarlar */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+  }
+  
+  /* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #6c757d, #495057);
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-left .logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+  }
+  
+  .navbar-left .project-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .navbar-right .nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 20px;
+    font-size: 16px;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 4px;
+  }
+  
+  .navbar-right .nav-link:hover {
+    background-color: #343a40;
+    color: #f8f9fa;
+  }
+  
+  /* Ana İçerik */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #e9ecef;
+  }
+  
+  .auth-section {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .auth-section h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #007bff;
+  }
+  
+  .auth-section p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #6c757d;
+  }
+  
+  /* Sekme Geçiş Butonları */
+.form-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  
+  .tab-button {
+    flex: 1;
+    padding: 12px 0;
+    text-align: center;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #6c757d;
+    transition: color 0.3s ease;
+  }
+  
+  .tab-button.active {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .form-tabs::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%; /* Sekmelerin eşit genişliğe göre ayarlanması */
+    height: 2px;
+    background: #007bff;
+    transition: left 0.3s ease;
+  }
+  
+  /* Aktif Sekme Konumu */
+  .tab-button:nth-child(1).active ~ .form-tabs::after {
+    left: 0%; /* Giriş Yap Sekmesi */
+  }
+  
+  .tab-button:nth-child(2).active ~ .form-tabs::after {
+    left: 50%; /* Kayıt Ol Sekmesi */
+  }
+  
+  
+  /* Form Alanları */
+  .tabcontent {
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .tabcontent.active {
+    display: block;
+  }
+  
+  input {
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  button[type="submit"] {
+    padding: 12px;
+    border: none;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Giriş Yap Butonu */
+  .btn-login {
+    background: #007bff;
+    color: #fff;
+  }
+  
+  .btn-login:hover {
+    background: #0056b3;
+  }
+  
+  /* Kayıt Ol Butonu */
+  .btn-signup {
+    background: #28a745;
+    color: #fff;
+  }
+  
+  .btn-signup:hover {
+    background: #218838;
+  }
+  
+  /* Animasyon */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #343a40;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  /* Responsive Tasarım */
+  @media (max-width: 768px) {
+    .auth-section {
+      padding: 30px;
+    }
+  
+    .tab-button {
+      font-size: 14px;
+    }
+  
+    button[type="submit"] {
+      font-size: 14px;
+    }
+  }
+  

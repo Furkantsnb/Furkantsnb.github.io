@@ -1,0 +1,142 @@
+/* Genel Stil */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Arka plan rengi */
+  }
+  
+  /* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #6c757d, #495057);
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-left .logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+  }
+  
+  .navbar-left .project-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .navbar-right .nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 20px;
+    font-size: 16px;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 4px;
+  }
+  
+  .navbar-right .nav-link:hover {
+    background-color: #343a40;
+    color: #f8f9fa;
+  }
+  
+  /* Welcome Content */
+  .welcome-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .welcome-container h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .welcome-container p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Image Sections */
+  .image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .large-image {
+    width: 100%;
+    max-width: 500px; /* Görsellerin maksimum genişliği */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .image-description {
+    max-width: 400px;
+    margin-left: 20px;
+  }
+  
+  .image-description h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .image-description p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .qr-link {
+    color: #4CAF50;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid #4CAF50;
+    transition: color 0.3s;
+  }
+  
+  .qr-link:hover {
+    color: #388E3C;
+  }
+  
+  /* Responsive Tasarım */
+  @media screen and (max-width: 768px) {
+    .image-section {
+      flex-direction: column; /* Mobilde dikey hizalanır */
+      text-align: center;
+    }
+  
+    .image-description {
+      margin-left: 0; /* Mobilde hizalama düzeltildi */
+    }
+  
+    .large-image {
+      max-width: 100%; /* Görsel tam genişlik alır */
+    }
+  
+    .navbar {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  

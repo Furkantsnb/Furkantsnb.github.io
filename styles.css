@@ -1,214 +1,287 @@
 /* Genel Ayarlar */
 body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    color: #343a40;
-  }
-  
-  /* Navbar */
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-image: url('arkaplan.jpg'); /* Arka plan resmi */
+  background-size: cover; /* Resmin tüm sayfayı kaplaması */
+  background-position: center; /* Resmi ortalar */
+  background-repeat: no-repeat; /* Resmin tekrar etmesini engeller */
+  overflow: hidden; /* Taşmayı engeller */
+  color: #343a40;
+}
+
+/* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: linear-gradient(90deg, #6c757d, #495057);
-    color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #6c757d, #495057);
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left .logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.navbar-left .project-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.navbar-right .nav-link {
+  text-decoration: none;
+  color: #ffffff;
+  margin-left: 20px;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+}
+
+.navbar-right .nav-link:hover {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+/* Ana İçerik Stil */
+.container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 70px); /* Navbar hariç tüm yüksekliği kaplar */
+}
+
+.form-container {
+  background-color: rgba(246, 220, 231, 0.7); /* Daha şeffaf arka plan */
+  padding: 30px;
+  border-radius: 15px; /* Yuvarlak köşeler */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Daha modern bir gölge */
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(15px); /* Daha bulanık bir arka plan */
+}
+
+h1 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+h1 + p {
+  text-align: center;
+  font-size: 18px;
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tab button {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 50%;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.tab button:hover {
+  background-color: #f4f4f4;
+}
+
+.tab button.active {
+  background-color: #8e2d2d;
+  color: #ffffff;
+}
+
+.tabcontent {
+  display: none;
+}
+
+input[type="email"], input[type="password"] {
+  width: calc(100% - 20px); /* Kutucukların tam genişliğini ayarladık */
+  padding: 10px;
+  margin: 10px auto; /* Yukarı-aşağı ortalama */
+  display: block; /* Ortalamayı tamamlama */
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.9); /* Hafif şeffaflık */
+}
+
+button[type="submit"] {
+  background-color: #8e2d2d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0f457f;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 150px;
+  background: #343a40;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Ana İçerik Stilleri */
+.resources, .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* İçeriği yukarı hizala */
+  align-items: center;
+  height: calc(100% - 70px); /* Navbar hariç tüm yüksekliği kapla */
+  padding-top: 30px; /* Yukarıdan boşluk miktarını azalt */
+  text-align: center;
+}
+
+.resources h1, .contact h1 {
+  color: #eb2279;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px; /* Kutucuklar için yukarıdan ekstra boşluk azaltıldı */
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.9); /* Hafif şeffaf beyaz kutucuk */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
+
+.card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.card a {
+  text-decoration: none;
+  color: #eb2279;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.card a:hover {
+  color: #0056b3;
+}
+
+/* İletişim Metinleri */
+.contact p {
+  margin: 5px 0; /* Metinler arası boşluk azaltıldı */
+  font-size: 23px;
+  color: rgb(16, 15, 15);
+}
+
+
+/* Responsive Tasarım: Mobil Cihazlar için */
+@media screen and (max-width: 768px) {
+  html, body {
+    overflow-y: auto; /* Dikey kaydırma özelliği etkinleştirildi */
   }
-  
+
+  .navbar {
+    flex-direction: column; /* Navbar öğeleri dikey hizalanır */
+    height: auto; /* Dinamik yükseklik */
+    padding: 10px; /* Navbar iç boşluğu azaltıldı */
+  }
+
   .navbar-left {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-left .logo {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    margin-right: 15px;
-    object-fit: cover;
-  }
-  
-  .navbar-left .project-name {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffffff;
-  }
-  
-  .navbar-right .nav-link {
-    text-decoration: none;
-    color: #ffffff;
-    margin-left: 20px;
-    font-size: 16px;
-    padding: 8px 12px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border-radius: 4px;
-  }
-  
-  .navbar-right .nav-link:hover {
-    background-color: #343a40;
-    color: #f8f9fa;
-  }
-  
-  /* Ana İçerik */
-.main-content {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #e9ecef;
+    margin-bottom: 10px; /* Mobilde logo ve başlık arasına boşluk eklendi */
   }
-  
-  .auth-section {
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    max-width: 400px;
+
+  .navbar-right {
+    justify-content: center;
+    gap: 5px; /* Butonlar arasındaki boşluk azaltıldı */
+    flex-wrap: wrap; /* Butonlar ekran genişliğine göre sarılır */
+  }
+
+  .project-name {
+    font-size: 18px; /* Mobilde başlık boyutu küçültüldü */
+    text-align: center; /* Başlık ortalandı */
+  }
+
+  .form-container {
+    padding: 20px; /* Mobilde iç padding artırıldı */
+    border-radius: 10px; /* Yuvarlak köşeler daha küçük */
+    max-width: 90%; /* Kutucuk genişliği ekranın %90'ını kaplar */
+    margin: 20px auto; /* Ortalanır */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+  }
+
+  .resources, .contact {
+    padding: 15px; /* Mobilde içerik alanına daha fazla yer */
+    min-height: auto; /* İçerik dinamik olarak genişler */
+    margin: 10px auto; /* Ortalanır */
     text-align: center;
+    overflow-y: auto; /* Dikey kaydırmayı etkinleştirir */
   }
-  
-  .auth-section h1 {
-    margin-bottom: 10px;
-    font-size: 24px;
-    color: #007bff;
+
+  .cards {
+    flex-direction: column; /* Mobilde kartlar dikey hizalanır */
+    gap: 15px; /* Kartlar arasındaki boşluk artırıldı */
+    margin: 10px auto; /* Ortalanır */
   }
-  
-  .auth-section p {
-    font-size: 14px;
-    margin-bottom: 20px;
-    color: #6c757d;
+
+  .card {
+    width: 90%; /* Kartlar ekran genişliğine uyum sağlar */
+    margin: 0 auto; /* Ortalanır */
   }
-  
-  /* Sekme Geçiş Butonları */
-.form-tabs {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    position: relative;
-    border-bottom: 2px solid #e0e0e0;
+
+  input[type="email"], input[type="password"] {
+    padding: 10px; /* Mobilde input alanları daha rahat kullanılır */
+    font-size: 14px; /* Yazı boyutu küçültüldü */
+    margin: 10px 0; /* Yukarı-aşağı boşluk eklendi */
   }
-  
-  .tab-button {
-    flex: 1;
-    padding: 12px 0;
-    text-align: center;
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    color: #6c757d;
-    transition: color 0.3s ease;
-  }
-  
-  .tab-button.active {
-    color: #007bff;
-    font-weight: bold;
-  }
-  
-  .form-tabs::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50%; /* Sekmelerin eşit genişliğe göre ayarlanması */
-    height: 2px;
-    background: #007bff;
-    transition: left 0.3s ease;
-  }
-  
-  /* Aktif Sekme Konumu */
-  .tab-button:nth-child(1).active ~ .form-tabs::after {
-    left: 0%; /* Giriş Yap Sekmesi */
-  }
-  
-  .tab-button:nth-child(2).active ~ .form-tabs::after {
-    left: 50%; /* Kayıt Ol Sekmesi */
-  }
-  
-  
-  /* Form Alanları */
-  .tabcontent {
-    display: none;
-    animation: fadeIn 0.3s ease;
-  }
-  
-  .tabcontent.active {
-    display: block;
-  }
-  
-  input {
-    padding: 12px;
-    border: 1px solid #ced4da;
-    border-radius: 8px;
-    font-size: 14px;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
+
   button[type="submit"] {
-    padding: 12px;
-    border: none;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    padding: 10px; /* Mobilde buton boyutu optimize edildi */
+    font-size: 14px; /* Yazı boyutu küçültüldü */
+    margin: 10px 0; /* Yukarı-aşağı boşluk eklendi */
   }
-  
-  /* Giriş Yap Butonu */
-  .btn-login {
-    background: #007bff;
-    color: #fff;
+
+  h1, h1 + p {
+    font-size: 20px; /* Başlık yazı boyutu optimize edildi */
+    line-height: 1.5; /* Daha okunabilir satır aralığı */
+    margin-bottom: 15px; /* Başlık altına boşluk eklendi */
   }
-  
-  .btn-login:hover {
-    background: #0056b3;
-  }
-  
-  /* Kayıt Ol Butonu */
-  .btn-signup {
-    background: #28a745;
-    color: #fff;
-  }
-  
-  .btn-signup:hover {
-    background: #218838;
-  }
-  
-  /* Animasyon */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 15px 0;
-    background: #343a40;
-    color: #fff;
-    font-size: 14px;
-  }
-  
-  /* Responsive Tasarım */
-  @media (max-width: 768px) {
-    .auth-section {
-      padding: 30px;
-    }
-  
-    .tab-button {
-      font-size: 14px;
-    }
-  
-    button[type="submit"] {
-      font-size: 14px;
-    }
-  }
-  
+}

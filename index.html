@@ -21,36 +21,44 @@
   </nav>
 
   <!-- Main Content -->
-  <main class="main-content">
-    <section class="auth-section">
-      <h1>Veri Dedektifi'ne Hoş Geldiniz</h1>
-      <p>Veri dünyasına eğlenceli bir yolculuk yapın!</p>
-      <div class="form-tabs">
-        <button id="defaultOpen" class="tab-button active" onclick="openForm(event, 'login')">Giriş Yap</button>
-        <button class="tab-button" onclick="openForm(event, 'signup')">Kayıt Ol</button>
+  <div class="container">
+    <div class="form-container">
+      <h1>Hoş Geldiniz</h1>
+      <div class="tab">
+        <button class="tablinks" onclick="openForm(event, 'login')" id="defaultOpen">Giriş Yap</button>
+        <button class="tablinks" onclick="openForm(event, 'signup')">Kayıt Ol</button>
       </div>
-      <div id="login" class="tabcontent active">
+      <div id="login" class="tabcontent">
         <form id="loginForm">
-          <input type="email" id="loginEmail" placeholder="Email adresiniz" required>
-          <input type="password" id="loginPassword" placeholder="Şifreniz" required>
-          <button type="submit" class="btn-login">Giriş Yap</button>
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" name="email" placeholder="Email adresinizi girin" required>
+          <label for="loginPassword">Şifre</label>
+          <input type="password" id="loginPassword" name="password" placeholder="Şifrenizi girin" required>
+          <button type="submit">Giriş Yap</button>
         </form>
       </div>
       <div id="signup" class="tabcontent">
         <form id="signupForm">
-          <input type="email" id="signupEmail" placeholder="Email adresiniz" required>
-          <input type="password" id="signupPassword" placeholder="Şifreniz" required>
-          <button type="submit" class="btn-signup">Kayıt Ol</button>
+          <label for="signupEmail">Email</label>
+          <input type="email" id="signupEmail" name="email" placeholder="Email adresinizi girin" required>
+          <label for="signupPassword">Şifre</label>
+          <input type="password" id="signupPassword" name="password" placeholder="Şifrenizi oluşturun" required>
+          <button type="submit">Kayıt Ol</button>
         </form>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
     <p>© 2024 Veri Dedektifi. Tüm hakları saklıdır.</p>
   </footer>
 
+  <!-- Firebase App -->
+  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+  <!-- Firebase Authentication -->
+  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth-compat.js"></script>
+  <!-- Custom Script -->
   <script src="scripts.js"></script>
 </body>
 </html>

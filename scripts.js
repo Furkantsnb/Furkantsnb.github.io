@@ -9,6 +9,7 @@ const firebaseConfig = {
     measurementId: "G-6FWH0PM28C"
   };
   
+  
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
@@ -19,24 +20,19 @@ const signupForm = document.getElementById("signupForm");
 
 // Tab Management
 function openForm(evt, formName) {
-    const tabcontent = document.getElementsByClassName("tabcontent");
-    const tabbuttons = document.getElementsByClassName("tab-button");
-  
-    // Tüm içerikleri gizle
-    for (let i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].classList.remove("active");
-    }
-  
-    // Tüm sekme butonlarından "active" sınıfını kaldır
-    for (let i = 0; i < tabbuttons.length; i++) {
-      tabbuttons[i].classList.remove("active");
-    }
-  
-    // Tıklanan sekme ve içeriği aktif yap
-    document.getElementById(formName).classList.add("active");
-    evt.currentTarget.classList.add("active");
+  const tabcontent = document.getElementsByClassName("tabcontent");
+  for (let i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
   }
-  
+
+  const tablinks = document.getElementsByClassName("tablinks");
+  for (let i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(formName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
 
 document.getElementById("defaultOpen").click();
 

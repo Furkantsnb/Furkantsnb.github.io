@@ -1,0 +1,39 @@
+/* Genel ayarlar */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+}
+
+/* QR Kod Kutusu */
+.qr-container {
+    width: 500px; /* Büyük bir kutu boyutu */
+    height: 500px;
+    background: #fff; /* Beyaz arka plan */
+    border-radius: 15px; /* Hafif yuvarlatılmış köşeler */
+    border: 4px solid #74ebd5; /* Kalın çerçeve */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Şık bir gölge efekti */
+}
+
+/* QR Kod Resmi */
+.qr-container img {
+    max-width: 90%; /* Kutunun içine sığması için sınır */
+    max-height: 90%;
+    height: auto;
+    width: auto;
+}
+
+/* Medya sorguları (mobil uyum) */
+@media (max-width: 768px) {
+    .qr-container {
+        width: 250px; /* Mobil cihazlar için biraz küçült */
+        height: 250px;
+    }
+}
